@@ -14,10 +14,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
 
     private Rigidbody2D rb;
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,5 +41,13 @@ public class PlayerMovement : MonoBehaviour
     void Movement() {
         moveDirection = new Vector2(xInput, yInput).normalized;
         rb.velocity = moveDirection * moveSpeed;
+
+        animator.SetFloat("Speed", moveDirection.magnitude);
+
+        if (moveDirection.x > 0) {
+            transform.localScale = new Vector3(1, 1, 1); // Facing right
+        } else if (moveDirection.x < 0) {
+            transform.localScale = new Vector3(-1, 1, 1); // Facing left
+        }
     }
 }
