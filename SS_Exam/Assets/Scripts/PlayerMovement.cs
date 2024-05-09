@@ -19,13 +19,28 @@ namespace Assets.Scripts {
 
         private Inv.Inventory inventory;
 
-        public GameObject itemPrefab;
+        public Dictionary<string, GameObject> itemPrefabs;
+
+        // List of item prefab references for initialization in the Inspector
+        [System.Serializable]
+        public struct ItemPrefabReference {
+            public string itemName;
+            public GameObject prefab;
+        }
+
+        public ItemPrefabReference[] itemPrefabReferences;
 
         // Start is called before the first frame update
         void Start() {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             inventory = new Inv.Inventory();
+
+            // Initialize the itemPrefabs dictionary
+            itemPrefabs = new Dictionary<string, GameObject>();
+            foreach (var itemPrefabReference in itemPrefabReferences) {
+                itemPrefabs[itemPrefabReference.itemName] = itemPrefabReference.prefab;
+            }
         }
 
         // Update is called once per frame
@@ -73,16 +88,16 @@ namespace Assets.Scripts {
 
                 Vector2 dropPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-                // Check if itemPrefab is assigned
-                if (itemPrefab != null) {
-                    GameObject droppedItem = Instantiate(itemPrefab, dropPosition, Quaternion.identity);
+                // Check if the corresponding prefab exists in the dictionary
+                if (itemPrefabs.TryGetValue(inventoryItem.itemName, out GameObject prefab)) {
+                    GameObject droppedItem = Instantiate(prefab, dropPosition, Quaternion.identity);
                     Item itemComponent = droppedItem.GetComponent<Item>();
                     itemComponent.itemName = inventoryItem.itemName;
                     itemComponent.quantity = 1;
 
                     Debug.Log($"Dropped {inventoryItem.itemName} at {dropPosition}");
                 } else {
-                    Debug.LogError("Item prefab is not assigned!");
+                    Debug.LogError($"No prefab found for item: {inventoryItem.itemName}");
                 }
             }
         }
