@@ -1,3 +1,4 @@
+using Assets.Scripts.Inventory;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,11 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    private Inventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        inventory = new Inventory();
     }
 
     // Update is called once per frame
