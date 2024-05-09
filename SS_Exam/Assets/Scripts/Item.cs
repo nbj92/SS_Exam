@@ -8,7 +8,12 @@ namespace Assets.Scripts {
         private void OnMouseDown() {
             PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
             if (playerMovement != null) {
-                playerMovement.PickUpItem(this);
+                float distance = Vector2.Distance(playerMovement.transform.position, transform.position);
+                if (distance <= playerMovement.maxPickupDropDistance) {
+                    playerMovement.PickUpItem(this);
+                } else {
+                    Debug.Log("Item is too far away to pick up.");
+                }
             }
         }
     }

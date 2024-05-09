@@ -9,6 +9,9 @@ namespace Assets.Scripts {
         [SerializeField]
         private float moveSpeed = 5;
 
+        
+        public float maxPickupDropDistance = 0.5f;
+
         private float xInput;
         private float yInput;
 
@@ -76,28 +79,37 @@ namespace Assets.Scripts {
         }
 
         public void PickUpItem(Item item) {
-            inventory.AddItem(item.itemName, item.quantity);
-            Debug.Log($"Added {item.quantity} {item.itemName}. Total: {inventory.GetItems().Find(i => i.itemName == item.itemName).quantity}");
-            Destroy(item.gameObject); // Remove the item from the scene
+            float distance = Vector2.Distance(transform.position, item.transform.position);
+            if (distance <= maxPickupDropDistance) {
+                inventory.AddItem(item.itemName, item.quantity);
+                Debug.Log($"Added {item.quantity} {item.itemName}. Total: {inventory.GetItems().Find(i => i.itemName == item.itemName).quantity}");
+                Destroy(item.gameObject); // Remove the item from the scene
+            } else {
+                Debug.Log("Item is too far away to pick up.");
+            }
         }
 
         void DropItem() {
             if (inventory.GetItems().Count > 0) {
-                Inv.InventoryItem inventoryItem = inventory.GetItems()[0]; // Get the first item in the inventory for simplicity
-                inventory.RemoveItem(inventoryItem.itemName, 1);
-
                 Vector2 dropPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                float distance = Vector2.Distance(transform.position, dropPosition);
 
-                // Check if the corresponding prefab exists in the dictionary
-                if (itemPrefabs.TryGetValue(inventoryItem.itemName, out GameObject prefab)) {
-                    GameObject droppedItem = Instantiate(prefab, dropPosition, Quaternion.identity);
-                    Item itemComponent = droppedItem.GetComponent<Item>();
-                    itemComponent.itemName = inventoryItem.itemName;
-                    itemComponent.quantity = 1;
+                if (distance <= maxPickupDropDistance) {
+                    Inv.InventoryItem inventoryItem = inventory.GetItems()[0]; // Get the first item in the inventory for simplicity
+                    inventory.RemoveItem(inventoryItem.itemName, 1);
 
-                    Debug.Log($"Dropped {inventoryItem.itemName} at {dropPosition}");
+                    if (itemPrefabs.TryGetValue(inventoryItem.itemName, out GameObject prefab)) {
+                        GameObject droppedItem = Instantiate(prefab, dropPosition, Quaternion.identity);
+                        Item itemComponent = droppedItem.GetComponent<Item>();
+                        itemComponent.itemName = inventoryItem.itemName;
+                        itemComponent.quantity = 1;
+
+                        Debug.Log($"Dropped {inventoryItem.itemName} at {dropPosition}");
+                    } else {
+                        Debug.LogError($"No prefab found for item: {inventoryItem.itemName}");
+                    }
                 } else {
-                    Debug.LogError($"No prefab found for item: {inventoryItem.itemName}");
+                    Debug.Log("Cannot drop item too far away.");
                 }
             }
         }

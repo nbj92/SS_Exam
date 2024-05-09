@@ -421,6 +421,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7078212647865679931, guid: 0af49f2e54c58b54c925cbcda5909bd8, type: 3}
     - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
+      propertyPath: maxPickupDropDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: itemPrefabReferences.Array.size
       value: 2
       objectReference: {fileID: 0}
