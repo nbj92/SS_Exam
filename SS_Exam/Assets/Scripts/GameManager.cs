@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,9 +67,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SetGameState(GameState.Playing);
-        score = 0; 
-                   
+        score = 0;
     }
 
     public void PauseGame() {
@@ -82,6 +83,11 @@ public class GameManager : MonoBehaviour
     public void EndGame() {
         SetGameState(GameState.Ended);
         // Handle end game logic
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 
@@ -103,5 +109,13 @@ public class GameManager : MonoBehaviour
     public void LoadGame() {
         score = PlayerPrefs.GetInt("Score", 0);
         // Load other necessary data
+    }
+
+    public void HowToPlay(GameObject g)
+    {
+        CanvasGroup cg = g.GetComponent<CanvasGroup>();
+        cg.alpha = cg.alpha == 0 ? 1 : 0;
+        cg.interactable = !cg.interactable;
+        cg.blocksRaycasts = !cg.blocksRaycasts;
     }
 }
