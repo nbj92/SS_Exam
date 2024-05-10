@@ -19,6 +19,7 @@ namespace Assets.Scripts {
 
         private Rigidbody2D rb;
         private Animator animator;
+        private Transform playerSpriteTransform;
 
         private Inv.Inventory inventory;
 
@@ -36,7 +37,13 @@ namespace Assets.Scripts {
         // Start is called before the first frame update
         void Start() {
             rb = GetComponent<Rigidbody2D>();
-            animator = GetComponent<Animator>();
+
+
+            animator = GetComponentInChildren<Animator>();
+            // Reference the PlayerSprite child GameObject
+            playerSpriteTransform = transform.Find("SpriteRnd");
+
+
             inventory = new Inv.Inventory();
 
             // Initialize the itemPrefabs dictionary
@@ -72,11 +79,12 @@ namespace Assets.Scripts {
             animator.SetFloat("Speed", moveDirection.magnitude);
 
             if (moveDirection.x > 0) {
-                transform.localScale = new Vector3(1, 1, 1); // Facing right
+                playerSpriteTransform.localScale = new Vector3(1, 1, 1); // Facing right
             } else if (moveDirection.x < 0) {
-                transform.localScale = new Vector3(-1, 1, 1); // Facing left
+                playerSpriteTransform.localScale = new Vector3(-1, 1, 1); // Facing left
             }
         }
+
 
         public void PickUpItem(Item item) {
             float distance = Vector2.Distance(transform.position, item.transform.position);
