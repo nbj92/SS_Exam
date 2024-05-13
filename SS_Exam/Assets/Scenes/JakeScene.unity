@@ -355,7 +355,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Circle_1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5357529403726732034, guid: b98e644fb3f25c640bb10e2c6e25be51, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
