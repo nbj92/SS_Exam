@@ -18,40 +18,30 @@ public class BreedingBar : MonoBehaviour
         
         Color.RGBToHSV(Fill.color, out float H, out float S, out float V);
         startHue = H;
-        //Debug.Log("Start: " +pSystem.isPlaying);
-        pSystem.Play();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (pSystem != null && !pSystem.isPlaying)
+        if (gameObject.activeSelf && slider.value < 1)
         {
-            pSystem.Play();
-            //Debug.Log(pSystem);
-        }
+            if (pSystem != null && !pSystem.isPlaying)
+                pSystem.Play();
 
-        if(gameObject.activeSelf && slider.value < 1)
-        {
-            slider.value += moveSpeed*Time.deltaTime;
+            slider.value += moveSpeed * Time.deltaTime;
             Color.RGBToHSV(Fill.color, out float H, out float S, out float V);
-            //Debug.Log("update " + H);
             H = startHue - startHue * slider.value;
+            Fill.color = Color.HSVToRGB(H, S, V);
 
-                
-                    Fill.color = Color.HSVToRGB(H, S, V);
-                
-            
-            if(slider.value > 0.65) {
+            ParticleSystem.MainModule mm = pSystem.main;
+            mm.startColor = Fill.color;
+
+            if (slider.value > 0.65)
                 moveSpeed = 0.5f;
-               
-            }
-
-
-
+        } else
+        {
+            pSystem.Stop();
         }
         
     }
