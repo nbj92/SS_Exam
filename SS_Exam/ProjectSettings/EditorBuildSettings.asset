@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 5eff3bbdcffdcc5468150b78d1414852
+  - enabled: 1
+    path: Assets/Scenes/MijoSceneOne.unity
+    guid: 77ea043af9f28a245a484185318b6b01
   m_configObjects: {}
