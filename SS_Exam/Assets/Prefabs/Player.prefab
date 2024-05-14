@@ -76,7 +76,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxPickupDropDistance: 2
-  itemPrefabReferences: []
+  itemPrefabReferences:
+  - itemName: Circle_1
+    prefab: {fileID: 1528495299234341518, guid: b98e644fb3f25c640bb10e2c6e25be51, type: 3}
+  - itemName: Circle_2
+    prefab: {fileID: 3017138880695320018, guid: 977bbd17f1f281a41b2cc90cd72e610e, type: 3}
 --- !u!70 &4864604424895553568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
