@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6031144761522257531}
   - component: {fileID: 3994739071154778281}
   m_Layer: 0
-  m_Name: Circle_2
+  m_Name: Amoebe_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
