@@ -65,15 +65,15 @@ public class Tooltip : MonoBehaviour
     //    }
     //}
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        btnCircle.SetActive(true);
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    btnCircle.SetActive(true);
+    //}
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        btnCircle.SetActive(false);
-    }
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    btnCircle.SetActive(false);
+    //}
 
     private void OnMouseOver()
     {
@@ -82,7 +82,6 @@ public class Tooltip : MonoBehaviour
 
     private void OnMouseExit()
     {
-        
         btnInfo.SetActive(false);
     }
 }

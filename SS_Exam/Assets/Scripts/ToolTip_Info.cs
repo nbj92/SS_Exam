@@ -10,6 +10,7 @@ public class ToolTip_Info : MonoBehaviour
     public CanvasGroup tooltipCG;
     public GameObject tooltipInfoBox;
     public GameObject btnInfo;
+    public static bool active = false; 
 
 
     private void Update()
@@ -45,30 +46,35 @@ public class ToolTip_Info : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        
+
+        if (!active || tooltipInfoBox.activeSelf)
+        {
             if (!fadeIn && tooltipCG.alpha <= 0)
             {
                 fadeIn = true;
                 tooltipInfoBox.SetActive(true);
+                active = true;
                 Debug.Log(fadeIn);
             }
             else if (!fadeOut && tooltipCG.alpha >= 1)
             {
                 fadeOut = true;
+                active = false;
                 Debug.Log(fadeOut);
             }
-        
+        }
     }
 
 
     private void OnMouseOver()
     {
+        if(!active)
         btnInfo.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        if(tooltipCG.alpha < 1)
+        if(!active)
         btnInfo.SetActive(false);
     }
 }
