@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,13 @@ public class BreedingBar : MonoBehaviour
         
         Color.RGBToHSV(Fill.color, out float H, out float S, out float V);
         startHue = H;
-        
+
+
+        //foreach (SizeGene gene in Enum.GetValues(typeof(SizeGene)))
+        //{
+        //    Debug.Log(Enum.GetName(typeof(gene)));
+        //}
+
     }
 
     // Update is called once per frame
