@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: 5eff3bbdcffdcc5468150b78d1414852
+  - enabled: 0
+    path: Assets/Scenes/Labratorie.unity
+    guid: bea2d571b9a5e4215b3352f7d34d2ee3
   - enabled: 1
-    path: Assets/Scenes/MijoSceneOne.unity
-    guid: 77ea043af9f28a245a484185318b6b01
+    path: Assets/Scenes/JakeScene.unity
+    guid: 5078f2b9914f75243909fe3aaa34f887
   m_configObjects: {}
