@@ -630,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: itemPrefabReferences.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: itemPrefabReferences.Array.data[0].prefab
@@ -657,6 +657,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3017138880695320018, guid: 977bbd17f1f281a41b2cc90cd72e610e, type: 3}
     - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
+      propertyPath: itemPrefabReferences.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 3923317834983440493, guid: 5639efc267cd57d45b9bc68751447783, type: 3}
+    - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: itemPrefabReferences.Array.data[0].itemName
       value: Amoebe_1
       objectReference: {fileID: 0}
@@ -679,6 +683,10 @@ PrefabInstance:
     - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: itemPrefabReferences.Array.data[5].itemName
       value: Amoebe_2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266769806824561664, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
+      propertyPath: itemPrefabReferences.Array.data[6].itemName
+      value: Amoebe_3
       objectReference: {fileID: 0}
     - target: {fileID: 6501301456982016596, guid: 70cd91394e4b3254aaa603edd6b17a83, type: 3}
       propertyPath: m_Constraints
