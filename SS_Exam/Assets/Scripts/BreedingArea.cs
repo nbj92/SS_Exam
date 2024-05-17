@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreedingMachine : MonoBehaviour
+public class BreedingArea : MonoBehaviour
 {
     // Reference to the AnimalGenetics script
     public AnimalGenetics animalGenetics;
@@ -15,26 +15,26 @@ public class BreedingMachine : MonoBehaviour
 
         if ( animalsInside.Length < 2 )
         {
-            // Move the placed animal to be a child of the breeding machine
+            // Move the placed animal to be a child of the breeding area
             animal.transform.SetParent(transform);
 
             Debug.Log("Animal placed in the machine: " + animal.name);
         }
         else
         {
-            // Breed the animals inside the machine
+            // Breed the animals inside the area
             Debug.Log("Breeding animals: " + animalsInside[0].name + " and " + animalsInside[1].name);
             BreedAnimals(animalsInside[0], animalsInside[1]);
 
-            // Remove the animals from the machine
+            // Remove the animals from the area
             Destroy(animalsInside[0].gameObject);
             Destroy(animalsInside[1].gameObject);
 
-            // Move the new animal to be a child of the breeding machine
-            animal.transform.SetParent(transform);
 
-            // Reset the position of the placed animal within the machine
-            animal.transform.localPosition = Vector3.zero;
+            // Reset the position of the placed animal within the area
+            //animal.transform.localPosition = Vector3.zero;
+            
+
             Debug.Log("New animal placed in the machine: " + animal.name);
         }
     }
@@ -46,12 +46,18 @@ public class BreedingMachine : MonoBehaviour
         GameObject offspring = animalGenetics.BreedAnimals(parentA, parentB);
         Debug.Log("Offspring created: " + offspring.name);
 
-        // Optionally, you can place the offspring somewhere in your scene
-        offspring.transform.position = transform.position;
+        // Determine a position outside the trigger area
+        Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
+
+        // Set the offspring's position to the new position
+        offspring.transform.position = outsideTriggerPosition;
+
+        // Detach the offspring from the breeding area
+        offspring.transform.SetParent(null);
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("Triggered with: " + other.gameObject.name);
 
@@ -75,5 +81,15 @@ public class BreedingMachine : MonoBehaviour
         {
             Debug.Log("Object is not tagged as Amoebe: " + other.gameObject.tag);
         }
+    }
+
+    // Method to get a position outside the trigger area
+    private Vector3 GetPositionOutsideTriggerArea()
+    {
+        // Calculate a random number for position outside the trigger area
+        float random = Random.Range(3f, 6f);
+        // Distance to place the offspring outside the trigger area
+        float offset = random; 
+        return transform.position + new Vector3(offset, 0f, 0f);
     }
 }

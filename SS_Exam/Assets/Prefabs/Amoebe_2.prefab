@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 4
-  dominance: 1
+  dominance: 2
 --- !u!50 &7047393738603373507
 Rigidbody2D:
   serializedVersion: 4

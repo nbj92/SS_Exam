@@ -249,6 +249,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labratorie_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3121421416159859133, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
+      propertyPath: m_Size.x
+      value: 14.620726
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121421416159859133, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.024488688
+      objectReference: {fileID: 0}
     - target: {fileID: 8495105093874602483, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2707316
