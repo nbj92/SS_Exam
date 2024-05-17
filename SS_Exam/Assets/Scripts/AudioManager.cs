@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour {
         if (instance == null) {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("AudioManager instantiated");
         } else {
             Destroy(gameObject);
         }
@@ -37,5 +38,13 @@ public class AudioManager : MonoBehaviour {
 
     public void SetEffectsVolume(float volume) {
         effectsSource.volume = volume;
+    }
+
+    public void PlayPickupSound() {
+        PlayEffect(0); // Assuming index 0 is for the pickup/drop sound
+    }
+
+    public void PlayDropSound() {
+        PlayEffect(0); // Reusing the same sound as pickup for drop
     }
 }
