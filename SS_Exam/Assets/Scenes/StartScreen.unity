@@ -782,6 +782,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1093216067}
     m_Modifications:
+    - target: {fileID: 2876113239530029382, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876113239530029382, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876113239530029382, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876113239530029382, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2929969937607151778, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -877,6 +893,20 @@ PrefabInstance:
     - target: {fileID: 4484100632261153050, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554730532619244955, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_text
+      value: "Avl p\xE5 dyrene og se, hvad der sker\n\nBrug WASD-tasterne til at
+        bev\xE6ge dig rundt i laboratoriet:\nW: Bev\xE6g dig fremad\nA: Bev\xE6g
+        dig til venstre\nS: Bev\xE6g dig bagud\nD: Bev\xE6g dig til h\xF8jre"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554730532619244955, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554730532619244955, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8558894034005850825, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
       propertyPath: m_Name
