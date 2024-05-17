@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labratorie_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2662720883562926652, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
+      propertyPath: itemPrefabReferences.Array.data[2].itemName
+      value: OffspringPrefab
+      objectReference: {fileID: 0}
     - target: {fileID: 3121421416159859133, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
       propertyPath: m_Size.x
       value: 14.620726
