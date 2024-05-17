@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Animals : MonoBehaviour
 {
-    public enum Color { Red, Green, Blue };
+    public float size;
     public float dominance;
-    public Color[] genes;
 }
 
 public class Ko : Animals
