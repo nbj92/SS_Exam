@@ -49,7 +49,8 @@ MonoBehaviour:
   musicSource: {fileID: 277644306584559746}
   effectsSource: {fileID: 1269342378453345074}
   musicClips: []
-  effectClips: []
+  effectClips:
+  - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
 --- !u!82 &277644306584559746
 AudioSource:
   m_ObjectHideFlags: 0
