@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 9002113799149352109}
   - component: {fileID: 1462242895089068008}
   - component: {fileID: 5366163150050251368}
+  - component: {fileID: 320992413812501466}
   m_Layer: 0
   m_Name: Amoebe_1
   m_TagString: Amoebe
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72ad0ca8102c904cb72c0f4c102a264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Circle_1
+  itemName: Amoebe_1
   quantity: 1
 --- !u!58 &9002113799149352109
 CircleCollider2D:
@@ -232,3 +233,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &320992413812501466
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528495299234341518}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

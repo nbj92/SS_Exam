@@ -250,6 +250,14 @@ PrefabInstance:
       value: Labratorie_prefab
       objectReference: {fileID: 0}
     - target: {fileID: 2662720883562926652, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
+      propertyPath: itemPrefabReferences.Array.data[0].itemName
+      value: Amoebe_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662720883562926652, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
+      propertyPath: itemPrefabReferences.Array.data[1].itemName
+      value: Amoebe_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662720883562926652, guid: cd4fa774b9fc449ed9d6f935d506991c, type: 3}
       propertyPath: itemPrefabReferences.Array.data[2].itemName
       value: OffspringPrefab
       objectReference: {fileID: 0}
@@ -427,6 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d905d8ee2a61b4989686adba5b10d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
 --- !u!4 &1629778485
 Transform:
   m_ObjectHideFlags: 0
