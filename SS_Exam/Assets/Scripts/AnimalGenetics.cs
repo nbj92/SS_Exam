@@ -1,32 +1,43 @@
-using Assets.Scripts;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
-
-
 
 public class AnimalGenetics : MonoBehaviour
 {
+    public GameObject offspringPrefab;
 
-    public SizeGene[] sg;
-
-    // Method to simulate the inheritance of genes from two parents
-    public AnimalGenes Breed(AnimalGenes parent1, AnimalGenes parent2)
+    public GameObject BreedAnimals(Animals parentA, Animals parentB)
     {
-        // Randomly choose one gene from each parent for size
-        SizeGene[] offspringSizeGenes = new SizeGene[2];
-        offspringSizeGenes[0] = parent1.sizeGene[Random.Range(0, parent1.sizeGene.Length)];
-        offspringSizeGenes[1] = parent2.sizeGene[Random.Range(0, parent2.sizeGene.Length)];
+        // Determine which genes the offspring inherits from each parent
+        Animals offspringGenes = TestTwoGenes(parentA, parentB);
 
-        // Randomly choose two genes from each parent for color
-        ColorGene[] offspringColorGenes = new ColorGene[2];
-        offspringColorGenes[0] = parent1.colorGenes[Random.Range(0, parent1.colorGenes.Length)];
-        offspringColorGenes[1] = parent2.colorGenes[Random.Range(0, parent2.colorGenes.Length)];
+        // Instantiate a new offspring object with the selected genes
+        GameObject offspring = Instantiate(offspringPrefab, transform.position, Quaternion.identity);
 
-        return new AnimalGenes(offspringSizeGenes, offspringColorGenes);
+        // Assign the genes to the offspring
+        Animals offspringComponent = offspring.GetComponent<Animals>();
+        offspringComponent.dominance = offspringGenes.dominance;
+        offspringComponent.size = offspringGenes.size;
+        // Assign other genes as needed
+
+        // Return the offspring object
+        return offspring;
+    }
+
+    Animals TestTwoGenes(Animals a, Animals b)
+    {
+        float size = a.dominance / (a.dominance + b.dominance);
+
+        float randomNumber = Random.Range(0f, 1f);
+
+        if(randomNumber <= size)
+        {
+            Debug.Log("Gene from a");
+            return a;
+        } else
+        {
+            Debug.Log("Gene from b");
+            return b;
+        }
     }
 }
-

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3177531448269976565}
   - component: {fileID: 6501301456982016596}
   - component: {fileID: 4266769806824561664}
+  - component: {fileID: 7536448318643606413}
   - component: {fileID: 4864604424895553568}
   m_Layer: 0
   m_Name: Player
@@ -77,10 +78,25 @@ MonoBehaviour:
   moveSpeed: 5
   maxPickupDropDistance: 2
   itemPrefabReferences:
-  - itemName: Circle_1
+  - itemName: Amoebe_1
     prefab: {fileID: 1528495299234341518, guid: b98e644fb3f25c640bb10e2c6e25be51, type: 3}
-  - itemName: Circle_2
+  - itemName: Amoebe_2
     prefab: {fileID: 3017138880695320018, guid: 977bbd17f1f281a41b2cc90cd72e610e, type: 3}
+  - itemName: Offpsring
+    prefab: {fileID: 6206833392345006590, guid: e91963d022557ab4781672ba5a4ad7fc, type: 3}
+--- !u!114 &7536448318643606413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091175397674579061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48f66aae1e73984d99f6bff892d3fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transporter: {fileID: 6333511205617595686, guid: a7cfde66631f52a449448b59a64d2b05, type: 3}
 --- !u!70 &4864604424895553568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
