@@ -77,9 +77,9 @@ MonoBehaviour:
   moveSpeed: 5
   maxPickupDropDistance: 2
   itemPrefabReferences:
-  - itemName: Circle_1
+  - itemName: Amoebe_1
     prefab: {fileID: 1528495299234341518, guid: b98e644fb3f25c640bb10e2c6e25be51, type: 3}
-  - itemName: Circle_2
+  - itemName: Amoebe_2
     prefab: {fileID: 3017138880695320018, guid: 977bbd17f1f281a41b2cc90cd72e610e, type: 3}
   - itemName: Offpsring
     prefab: {fileID: 6206833392345006590, guid: e91963d022557ab4781672ba5a4ad7fc, type: 3}
