@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 277644306584559746}
   effectsSource: {fileID: 1269342378453345074}
-  musicClips: []
+  musicClips:
+  - {fileID: 8300000, guid: 033766cc31c97904bae4404b8a079544, type: 3}
   effectClips:
   - {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
 --- !u!82 &277644306584559746

@@ -19,6 +19,10 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    private void Start() {
+        PlayMusic(0); // Assuming index 0 is the music you want to play
+    }
+
     public void PlayMusic(int index) {
         if (index >= 0 && index < musicClips.Length) {
             musicSource.clip = musicClips[index];
