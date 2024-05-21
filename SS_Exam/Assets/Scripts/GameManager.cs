@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int score;
+    public Scene? active = null;
+    
 
     public enum GameState {
         MainMenu,
