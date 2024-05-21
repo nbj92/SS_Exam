@@ -29,8 +29,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   
+// Til pauseskærmen
+  public GameObject pause; 
+  private bool isPaused = false;
 
+//
     public void SetGameState(GameState newState) {
         currentState = newState;
         OnStateChange(currentState);
@@ -63,7 +66,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else {
+                PauseGame(); 
+            }
+        }
     }
 
     public void StartGame() {
@@ -74,14 +86,23 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame() {
         SetGameState(GameState.Paused);
+        pause.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void ResumeGame() {
-        SetGameState(GameState.Playing);
+        // SetGameState(GameState.Playing);
+        pause.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false; 
+        Debug.Log("button test"); 
     }
 
     public void EndGame() {
         SetGameState(GameState.Ended);
+        SceneManager.LoadScene(0); 
+        Debug.Log("Game Ended");
         // Handle end game logic
     }
 

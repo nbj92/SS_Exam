@@ -76,7 +76,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxPickupDropDistance: 2
-  itemPrefabReferences: []
+  itemPrefabReferences:
+  - itemName: Circle_1
+    prefab: {fileID: 1528495299234341518, guid: b98e644fb3f25c640bb10e2c6e25be51, type: 3}
+  - itemName: Circle_2
+    prefab: {fileID: 3017138880695320018, guid: 977bbd17f1f281a41b2cc90cd72e610e, type: 3}
+  - itemName: Offpsring
+    prefab: {fileID: 6206833392345006590, guid: e91963d022557ab4781672ba5a4ad7fc, type: 3}
 --- !u!70 &4864604424895553568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -183,8 +189,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1020147925
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

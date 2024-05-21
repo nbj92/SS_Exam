@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Tooltip
   - infobox
+  - Amoebe
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 
+  - name: Water
     uniqueID: 1517346189
+    locked: 0
+  - name: Ground
+    uniqueID: 3788066313
+    locked: 0
+  - name: Vegetation
+    uniqueID: 3120091237
+    locked: 0
+  - name: Player_and_Animals
+    uniqueID: 1020147925
     locked: 0
