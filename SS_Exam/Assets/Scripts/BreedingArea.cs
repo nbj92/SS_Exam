@@ -7,7 +7,10 @@ public class BreedingArea : MonoBehaviour
     // Reference to the AnimalGenetics script
     public AnimalGenetics animalGenetics;
 
-     // Method called when an animal is placed in the machine
+    // List to track animals inside the breeding area
+    private List<Animals> animalsInside = new List<Animals>();
+
+    // Method called when an animal is placed in the machine
     public void PlaceAnimal(Animals animal)
     {
         Animals[] animalsInside = GetComponentsInChildren<Animals>();
@@ -45,7 +48,6 @@ public class BreedingArea : MonoBehaviour
         // Call the BreedAnimals method from the AnimalGenetics script
         GameObject offspring = animalGenetics.BreedAnimals(parentA, parentB);
         Debug.Log("Offspring created: " + offspring.name);
-
         // Determine a position outside the trigger area
         Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
 
@@ -56,8 +58,26 @@ public class BreedingArea : MonoBehaviour
         offspring.transform.SetParent(null);
     }
 
+    private IEnumerator BreedAnimalsCoroutine()
+    {
+        yield return new WaitForEndOfFrame(); // Ensure both animals are registered
 
-    private void OnTriggerStay2D(Collider2D other)
+        if ( animalsInside.Count >= 2 )
+        {
+            Animals parentA = animalsInside[0];
+            Animals parentB = animalsInside[1];
+
+            Debug.Log("Breeding animals: " + parentA.name + " and " + parentB.name);
+            BreedAnimals(parentA, parentB);
+
+            // Remove the animals from the list and destroy them
+            animalsInside.Clear();
+            Destroy(parentA.gameObject);
+            Destroy(parentB.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered with: " + other.gameObject.name);
 
@@ -71,10 +91,16 @@ public class BreedingArea : MonoBehaviour
             Debug.Log("Animal component: " + ( animal != null ? animal.name : "null" ));
 
             // Ensure that the animal component is not null
-            if ( animal != null )
+            if ( animal != null && !animalsInside.Contains(animal) )
             {
-                // Place the animal into the machine
-                PlaceAnimal(animal);
+                // Add the animal to the list of animals inside the breeding area
+                animalsInside.Add(animal);
+
+                // Start the breeding coroutine if there are two animals inside
+                if ( animalsInside.Count >= 2 )
+                {
+                    StartCoroutine(BreedAnimalsCoroutine());
+                }
             }
         }
         else
@@ -91,5 +117,18 @@ public class BreedingArea : MonoBehaviour
         // Distance to place the offspring outside the trigger area
         float offset = random; 
         return transform.position + new Vector3(offset, 0f, 0f);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if ( other.CompareTag("Amoebe") )
+        {
+            Animals animal = other.GetComponent<Animals>();
+            if ( animal != null && animalsInside.Contains(animal) )
+            {
+                animalsInside.Remove(animal);
+                Debug.Log("Animal exited the breeding area: " + animal.name);
+            }
+        }
     }
 }
