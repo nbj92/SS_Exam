@@ -7,8 +7,11 @@ public class BreedingArea : MonoBehaviour
     // Reference to the AnimalGenetics script
     public AnimalGenetics animalGenetics;
 
+    public GameManager gameManager;
+
     // List to track animals inside the breeding area
     private List<Animals> animalsInside = new List<Animals>();
+
 
     // Method called when an animal is placed in the machine
     public void PlaceAnimal(Animals animal)
@@ -50,6 +53,16 @@ public class BreedingArea : MonoBehaviour
         Debug.Log("Offspring created: " + offspring.name);
         // Determine a position outside the trigger area
         Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
+
+        if (gameManager != null)
+        {
+            //add point based on the animal tag
+            if ( offspring.CompareTag("Amoebe") )
+            {
+                // Add a point to the score using the game manager
+                gameManager.AddScore(1);
+            }
+        }
 
         // Set the offspring's position to the new position
         offspring.transform.position = outsideTriggerPosition;

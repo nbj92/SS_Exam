@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int score;
+
+    public TextMeshProUGUI scoreText;
 
     public enum GameState {
         MainMenu,
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score = 0;
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -118,8 +122,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void UpdateUI() {
-        // You would typically update UI elements here
-        Debug.Log("Current Score: " + score);
+
+        if ( scoreText != null )
+        {
+            scoreText.text = "Gold: " + score.ToString();
+        }
     }
 
     public void SaveGame() {
@@ -129,7 +136,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame() {
         score = PlayerPrefs.GetInt("Score", 0);
-        // Load other necessary data
+        UpdateUI();
     }
 
     public void HowToPlay(GameObject g)
