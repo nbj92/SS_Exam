@@ -60,7 +60,7 @@ public class BreedingArea : MonoBehaviour
             if ( offspring.CompareTag("Amoebe") )
             {
                 // Add a point to the score using the game manager
-                gameManager.AddScore(1);
+                gameManager.AddScore(2);
             }
         }
 
@@ -126,10 +126,12 @@ public class BreedingArea : MonoBehaviour
     private Vector3 GetPositionOutsideTriggerArea()
     {
         // Calculate a random number for position outside the trigger area
-        float random = Random.Range(3f, 6f);
+        float randomX = Random.Range(-1.9f, 0.3f);
+        float randonY = Random.Range(1f, -1f);
         // Distance to place the offspring outside the trigger area
-        float offset = random; 
-        return transform.position + new Vector3(offset, 0f, 0f);
+        float offsetX = randomX;
+        float offsetY = randonY;
+        return transform.position + new Vector3(offsetX, offsetY, 0f);
     }
 
     private void OnTriggerExit2D(Collider2D other)
