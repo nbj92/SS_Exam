@@ -4,19 +4,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DestinationScript : MonoBehaviour
-{
+public class DestinationScript : MonoBehaviour {
     public GameObject menuPanel; // Reference to the UI panel
     public TMP_Dropdown destinationDropdown; // Reference to the Dropdown
+    private bool isInitialized = false;
 
     void Start() {
         menuPanel.SetActive(false); // Ensure the menu is initially hidden
+
+        // Add listener for when the dropdown value is changed
+        destinationDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
     }
 
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) // Detect left mouse button click
         {
             menuPanel.SetActive(true); // Show the menu when the teleporter is clicked
+            ResetDropdown();
         }
     }
 
@@ -33,8 +37,18 @@ public class DestinationScript : MonoBehaviour
 
     public void TeleportToDestination() {
         string selectedDestination = destinationDropdown.options[destinationDropdown.value].text;
-        // Implement your teleportation logic here
-        Debug.Log("Teleporting to " + selectedDestination);
-        CloseMenu();
+        if (selectedDestination != "Select a Destination") {
+            // Implement your teleportation logic here
+            Debug.Log("Teleporting to " + selectedDestination);
+            CloseMenu();
+        }
+    }
+
+    public void OnDropdownValueChanged(int index) {
+        TeleportToDestination(); // Call the teleport method when the dropdown value changes
+    }
+
+    private void ResetDropdown() {
+        destinationDropdown.value = 0; // Set to the placeholder option
     }
 }
