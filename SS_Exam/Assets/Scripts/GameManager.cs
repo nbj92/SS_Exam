@@ -89,8 +89,10 @@ public class GameManager : MonoBehaviour
     public void PauseGame() {
         SetGameState(GameState.Paused);
         pause.SetActive(true);
+        
         Time.timeScale = 0f;
         isPaused = true;
+        //SceneManager.LoadScene(3);
     }
 
     public void ResumeGame() {

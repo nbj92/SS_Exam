@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d905d8ee2a61b4989686adba5b10d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
+  pause: {fileID: 968358057611200314, guid: 13aa932606cf12745aa4966ac2d68c7d, type: 3}
 --- !u!4 &654738463
 Transform:
   m_ObjectHideFlags: 0
