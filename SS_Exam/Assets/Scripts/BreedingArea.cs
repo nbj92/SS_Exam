@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BreedingArea : MonoBehaviour
 {
@@ -9,9 +10,20 @@ public class BreedingArea : MonoBehaviour
 
     public GameManager gameManager;
 
+    public Slider breedingBar;
+
     // List to track animals inside the breeding area
     private List<Animals> animalsInside = new List<Animals>();
 
+    private void Awake()
+    {
+        breedingBar.value = 0;
+        breedingBar.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+    }
 
     // Method called when an animal is placed in the machine
     public void PlaceAnimal(Animals animal)
@@ -45,9 +57,23 @@ public class BreedingArea : MonoBehaviour
         }
     }
 
-    // Method to breed two animals inside the machine
+    // Method to breed two animals inside the area
     private void BreedAnimals(Animals parentA, Animals parentB)
     {
+
+        // Show the breeding bar
+        breedingBar.gameObject.SetActive(true);
+        breedingBar.value = 0;
+
+        while ( breedingBar.value != 1 )
+        {
+            breedingBar.value += Time.deltaTime;
+        }
+
+        // Hide the breeding bar
+        //breedingBar.gameObject.SetActive(false);
+        //breedingBar.value = 0;
+
         // Call the BreedAnimals method from the AnimalGenetics script
         GameObject offspring = animalGenetics.BreedAnimals(parentA, parentB);
         Debug.Log("Offspring created: " + offspring.name);
@@ -81,7 +107,10 @@ public class BreedingArea : MonoBehaviour
             Animals parentB = animalsInside[1];
 
             Debug.Log("Breeding animals: " + parentA.name + " and " + parentB.name);
+
+            //breedingBar the animals
             BreedAnimals(parentA, parentB);
+
 
             // Remove the animals from the list and destroy them
             animalsInside.Clear();
