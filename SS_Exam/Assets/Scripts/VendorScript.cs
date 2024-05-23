@@ -5,40 +5,40 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class VendorScript : MonoBehaviour {
-    public GameObject menuPanel; // Reference to the UI panel
-    public TMP_Dropdown vendorDropdown; // Reference to the Dropdown
+    public GameObject menuPanel; 
+    public TMP_Dropdown vendorDropdown; 
 
     void Start() {
-        menuPanel.SetActive(false); // Ensure the menu is initially hidden
+        menuPanel.SetActive(false); 
 
-        // Add listener for when the dropdown value is changed
+        
         vendorDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
 
-        // Initialize dropdown
+       
         InitializeDropdown();
     }
 
     void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) // Detect left mouse button click
+        if (Input.GetMouseButtonDown(0)) 
         {
-            menuPanel.SetActive(true); // Show the menu when the vendor machine is clicked
+            menuPanel.SetActive(true); 
             ResetDropdown();
         }
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.activeSelf) // Check for Escape key press and if the menu is open
+        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.activeSelf) 
         {
-            CloseMenu(); // Close the menu
+            CloseMenu(); 
         }
     }
 
     public void CloseMenu() {
-        menuPanel.SetActive(false); // Hide the menu
+        menuPanel.SetActive(false); 
     }
 
     public void BuyItem(string itemName) {
-        // Implement your item purchasing logic here
+        
         Debug.Log("Buying " + itemName);
         CloseMenu();
     }
@@ -46,12 +46,12 @@ public class VendorScript : MonoBehaviour {
     public void OnDropdownValueChanged(int index) {
         string selectedItem = vendorDropdown.options[index].text;
         if (selectedItem != "Equipment to Buy") {
-            BuyItem(selectedItem); // Call the purchase method when an item is selected
+            BuyItem(selectedItem); 
         }
     }
 
     private void InitializeDropdown() {
-        // Add a placeholder option at the beginning
+        
         if (vendorDropdown.options.Count == 0) {
             TMP_Dropdown.OptionData placeholder = new TMP_Dropdown.OptionData("Equipment to Buy");
             vendorDropdown.options.Add(placeholder);
@@ -66,7 +66,7 @@ public class VendorScript : MonoBehaviour {
     }
 
     private void ResetDropdown() {
-        vendorDropdown.value = 0; // Set to the placeholder option
-        vendorDropdown.RefreshShownValue(); // Refresh to show the correct value
+        vendorDropdown.value = 0;
+        vendorDropdown.RefreshShownValue(); 
     }
 }
