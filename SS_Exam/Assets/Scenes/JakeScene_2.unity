@@ -240,13 +240,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labratorie_prefab_transporter
       objectReference: {fileID: 0}
+    - target: {fileID: 5340984084996337453, guid: 31d7b27a1d58e47a38608ef457898539, type: 3}
+      propertyPath: menuPanel
+      value: 
+      objectReference: {fileID: 1219908162}
+    - target: {fileID: 5340984084996337453, guid: 31d7b27a1d58e47a38608ef457898539, type: 3}
+      propertyPath: vendorDropdown
+      value: 
+      objectReference: {fileID: 1375204972}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4394981039612270581, guid: 31d7b27a1d58e47a38608ef457898539, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1461233689}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d7b27a1d58e47a38608ef457898539, type: 3}
 --- !u!114 &1204423338 stripped
 MonoBehaviour:
@@ -378,25 +383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1461233685 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4394981039612270581, guid: 31d7b27a1d58e47a38608ef457898539, type: 3}
-  m_PrefabInstance: {fileID: 1204423334}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1461233689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461233685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91db49cf25903004bb9f576d8279d2f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPanel: {fileID: 1219908162}
-  vendorDropdown: {fileID: 1375204972}
 --- !u!1 &1687464427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6320412778229192116, guid: aec0a1cde83145c49b1ec6f753839e6f, type: 3}

@@ -2541,6 +2541,7 @@ GameObject:
   - component: {fileID: 7438841902657298113}
   - component: {fileID: 8124532656970733493}
   - component: {fileID: 8029038061333892969}
+  - component: {fileID: 5340984084996337453}
   m_Layer: 0
   m_Name: decor_3
   m_TagString: Untagged
@@ -2660,6 +2661,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.079972, y: 4.0320406}
   m_EdgeRadius: 0
+--- !u!114 &5340984084996337453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394981039612270581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91db49cf25903004bb9f576d8279d2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 0}
+  vendorDropdown: {fileID: 0}
 --- !u!1 &5193420182421655923
 GameObject:
   m_ObjectHideFlags: 0
