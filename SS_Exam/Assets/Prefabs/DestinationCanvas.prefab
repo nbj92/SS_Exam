@@ -1205,9 +1205,11 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Amoeba Island (free)
       m_Image: {fileID: 0}
-    - m_Text: Beaver Forest (15g)
+    - m_Text: Home (20g)
       m_Image: {fileID: 0}
-    - m_Text: Goat Mountains (20g)
+    - m_Text: Beaver Forest (25g)
+      m_Image: {fileID: 0}
+    - m_Text: Goat Mountains (30g)
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
