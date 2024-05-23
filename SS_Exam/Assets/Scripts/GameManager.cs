@@ -1,3 +1,4 @@
+using Assets.Scripts.Alternativ;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,36 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int score;
-    public Scene? active = null;
+
     
+
+    public List<Animal_2> animals = new List<Animal_2>();
+    public List<string> names = new List<string>();
+
+    public void AddAnimal(Animal_2 animal)
+    {
+        if (animal != null)
+        {
+            animals.Add(animal);
+            names.Add(animal.AnimalName);
+        }
+
+    }
+
+    public void RemoveAnimal(Animal_2 animal)
+    {
+        if (animals.Contains(animal))
+        {
+            animals.Remove(animal);
+            names.Remove(animal.AnimalName);
+        }
+    }
+
+    public List<Animal_2> GetAnimals()
+    {
+        return new List<Animal_2>(animals);
+    }
+
 
     public enum GameState {
         MainMenu,

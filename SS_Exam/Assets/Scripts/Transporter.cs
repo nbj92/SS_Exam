@@ -17,6 +17,7 @@ public class Transporter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Transporter")
         {
+            PlayerPrefs.Save();
             //Transform t = transporter.transform;
             if (SceneManager.GetActiveScene().name == "Laboratorie")
             {
