@@ -7,7 +7,7 @@ public class Transporter : MonoBehaviour
 {
     public GameObject transporter;
 
-   
+
     void Update()
     {
         //GameManager.instance.active =
@@ -17,16 +17,17 @@ public class Transporter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Transporter")
         {
-            
-            if (SceneManager.GetActiveScene().name == "Laboratorie")
+            PlayerPrefs.Save();
+            //Transform t = transporter.transform;
+            if (SceneManager.GetActiveScene().name == "Laboratorie_new")
             {
-                SceneManager.LoadScene("JakeScene");
-                
+                SceneManager.LoadScene("JakeScene_new");
+                //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
             }
             else
             {
-                SceneManager.LoadScene("Laboratorie");
-                
+                SceneManager.LoadScene("Laboratorie_new");
+                //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
             }
         }
 

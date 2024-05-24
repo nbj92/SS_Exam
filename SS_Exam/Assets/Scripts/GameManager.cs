@@ -1,3 +1,4 @@
+using Assets.Scripts.Alternativ;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,10 +11,38 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private int score;
-    public Scene? active = null;
-    
+
+
+
 
     public TextMeshProUGUI scoreText;
+    public List<Animal_2> animals = new List<Animal_2>();
+    public List<string> names = new List<string>();
+
+    public void AddAnimal(Animal_2 animal)
+    {
+        if (animal != null)
+        {
+            animals.Add(animal);
+            names.Add(animal.AnimalName);
+        }
+
+    }
+
+    public void RemoveAnimal(Animal_2 animal)
+    {
+        if (animals.Contains(animal))
+        {
+            animals.Remove(animal);
+            names.Remove(animal.AnimalName);
+        }
+    }
+
+    public List<Animal_2> GetAnimals()
+    {
+        return new List<Animal_2>(animals);
+    }
+
 
     public enum GameState {
         MainMenu,
@@ -35,7 +64,7 @@ public class GameManager : MonoBehaviour
     }
 
 // Til pauseskærmen
-  public GameObject pause; 
+  public GameObject pause;
   private bool isPaused = false;
 
 //
@@ -79,7 +108,7 @@ public class GameManager : MonoBehaviour
                 ResumeGame();
             }
             else {
-                PauseGame(); 
+                PauseGame();
             }
         }
     }
@@ -93,7 +122,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame() {
         SetGameState(GameState.Paused);
         pause.SetActive(true);
-        
+
         Time.timeScale = 0f;
         isPaused = true;
         //SceneManager.LoadScene(3);
@@ -103,13 +132,13 @@ public class GameManager : MonoBehaviour
         // SetGameState(GameState.Playing);
         pause.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false; 
-        Debug.Log("button test"); 
+        isPaused = false;
+        Debug.Log("button test");
     }
 
     public void EndGame() {
         SetGameState(GameState.Ended);
-        SceneManager.LoadScene(0); 
+        SceneManager.LoadScene(0);
         Debug.Log("Game Ended");
         // Handle end game logic
     }

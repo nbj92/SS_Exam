@@ -1,4 +1,7 @@
+using System;
+
 namespace Assets.Scripts.Inventory {
+    [Serializable]
     public class InventoryItem {
         public string itemName;
         public int quantity;
