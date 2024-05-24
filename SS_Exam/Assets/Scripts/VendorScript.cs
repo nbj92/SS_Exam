@@ -27,7 +27,7 @@ public class VendorScript : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.activeSelf) 
+        if (Input.GetKeyDown(KeyCode.V) && menuPanel.activeSelf) 
         {
             CloseMenu(); 
         }
