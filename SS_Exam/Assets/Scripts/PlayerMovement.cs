@@ -90,7 +90,10 @@ namespace Assets.Scripts {
             float distance = Vector2.Distance(transform.position, item.transform.position);
             if (distance <= maxPickupDropDistance) {
                 inventory.AddItem(item.itemName, item.quantity);
-                AudioManager.instance.PlayPickupSound();
+                if (AudioManager.instance)
+                {
+                    AudioManager.instance.PlayPickupSound();
+                }
                 Debug.Log($"Added {item.quantity} {item.itemName}. Total: {inventory.GetItems().Find(i => i.itemName == item.itemName).quantity}");
                 Destroy(item.gameObject); // Remove the item from the scene
             } else {
@@ -111,7 +114,10 @@ namespace Assets.Scripts {
                         GameObject droppedItem = Instantiate(prefab, dropPosition, Quaternion.identity);
                         Item itemComponent = droppedItem.GetComponent<Item>();
                         itemComponent.itemName = inventoryItem.itemName;
-                        AudioManager.instance.PlayDropSound();
+                        if (AudioManager.instance)
+                        {
+                            AudioManager.instance.PlayDropSound();
+                        }
                         itemComponent.quantity = 1;
 
                         Debug.Log($"Dropped {inventoryItem.itemName} at {dropPosition}");
