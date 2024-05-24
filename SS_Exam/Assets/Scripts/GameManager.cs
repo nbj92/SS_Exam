@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         pause.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        // SceneManager.LoadScene(3);
     }
 
     public void ResumeGame() {
