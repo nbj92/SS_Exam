@@ -53,6 +53,7 @@ public class BreedingArea : MonoBehaviour
         // Determine a position outside the trigger area
         Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
 
+        //add points to the game manager
         if ( gameManager != null )
         {
             // Add a point based on the animal tag

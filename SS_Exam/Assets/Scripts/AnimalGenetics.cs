@@ -30,6 +30,7 @@ public class AnimalGenetics : MonoBehaviour
 
         float randomNumber = Random.Range(0f, 1f);
 
+
         if(randomNumber <= size)
         {
             Debug.Log("Gene from a");

@@ -17,6 +17,7 @@ public class Breed : MonoBehaviour
 
     public Animal BreedAnimal(Animal father, Animal mother)
     {
+        UIManager.Instance.ShowUILayout(UILayouts.Lab);
 
         SizeGene sg;
         ColorGene cg;
