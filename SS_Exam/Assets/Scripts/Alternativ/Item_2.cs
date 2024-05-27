@@ -8,46 +8,50 @@ namespace Assets.Scripts
     public class Item_2 : MonoBehaviour
     {
 
-        private Color color;
-        public float size = 1;
+        public Color color;
+        public float size;
         public GameObject sprite;
         public Animal_2 Animal { get; set; }
 
+        public bool breed = false;
+        //= new Animal_2("Amoebe_" + GameManager.instance.GetAnimals().Count, null, null);
 
         
+
+
         private void Start()
         {
-            SpriteRenderer sr = sprite.GetComponent<SpriteRenderer>();
-            sprite.transform.localScale = new Vector3(size, size, 1f);
 
-            if (size == 1)
-            {
-                color = new Color32(22, 25, 201, 255);
-                sr.color = color;
-                //Debug.Log("size : 1");
-            }
-            else if (size == 2)
-            {
-                color = new Color32(161, 28, 34, 255);
-                sr.color = color;
-                
-                //Debug.Log("size : 2");
-                
-                
-                //Debug.Log("Color: " + color);
-            } else
-            {
-                color = new Color32(22, 25, 201, 255);
-                sr.color = color;
-                
-                //Debug.Log("size : NOT 1 OR 2");
-            }
             int animalCount = GameManager.instance.GetAnimals().Count;
-            Animal = new Animal_2("Amoebe_"+animalCount, size, color);
-            Debug.Log("Ani_Size: " + Animal.size);
-            GameManager.instance.AddAnimal(Animal);
+            Debug.Log("Color: " + color);
+            Debug.Log("Animal: " + Animal);
+            if (Animal == null)
+            {
+                if (size == 1f)
+                {
+                    color = new Color(22 / 255f, 25 / 255f, 201 / 255f, 1f);
+                }
+                else if (size == 2f)
+                {
+                    color = new Color(161 / 255.0f, 28 / 255.0f, 34 / 255.0f, 1.0f); //new Color(161f, 28f, 34f, 255f);
+                    Debug.Log("Size 2 color: " + color);
+                }
+                
+                Animal = new Animal_2("Amoebe_" + animalCount, size, color);
+            }
 
+            
+            SpriteRenderer sr = sprite.GetComponent<SpriteRenderer>();
+            sprite.transform.localScale = new Vector3((float)Animal.size, (float)Animal.size, 1f);
+
+            sr.color = Animal.Color;
+
+            //int animalCount = GameManager.instance.GetAnimals().Count;
+            //Animal = new Animal_2("Amoebe_" + animalCount, size, color);
+            GameManager.instance.AddAnimal(Animal);
         }
+
+        
         private void OnMouseDown()
         {
             PlayerMovement_2 playerMovement = FindObjectOfType<PlayerMovement_2>();
