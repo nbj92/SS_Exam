@@ -13,12 +13,6 @@ namespace Assets.Scripts
         public GameObject sprite;
         public Animal_2 Animal { get; set; }
 
-        public bool breed = false;
-        //= new Animal_2("Amoebe_" + GameManager.instance.GetAnimals().Count, null, null);
-
-        
-
-
         private void Start()
         {
 
@@ -45,9 +39,6 @@ namespace Assets.Scripts
             sprite.transform.localScale = new Vector3((float)Animal.size, (float)Animal.size, 1f);
 
             sr.color = Animal.Color;
-
-            //int animalCount = GameManager.instance.GetAnimals().Count;
-            //Animal = new Animal_2("Amoebe_" + animalCount, size, color);
             GameManager.instance.AddAnimal(Animal);
         }
 
@@ -61,7 +52,6 @@ namespace Assets.Scripts
                 if (distance <= playerMovement.maxPickupDropDistance)
                 {
                     playerMovement.PickUpItem(this);
-                    //Debug.Log("Close enough.");
                 }
                 else
                 {
