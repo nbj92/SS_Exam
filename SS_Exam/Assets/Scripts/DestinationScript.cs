@@ -20,7 +20,7 @@ public class DestinationScript : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.activeSelf) 
+        if (Input.GetKeyDown(KeyCode.T) && menuPanel.activeSelf) 
         {
             CloseMenu(); 
         }
