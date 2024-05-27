@@ -32,7 +32,7 @@ namespace Assets.Scripts
         void Start()
         {
 
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
             // Reference the PlayerSprite child GameObject
@@ -155,14 +155,15 @@ namespace Assets.Scripts
                     inventory.RemoveAt(inventory.Count-1);
 
 
-                    GameObject go = prefab;
-                    GameObject child = go.transform.GetChild(0).gameObject;
-                    SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                    //GameObject go = prefab;
+                    //GameObject child = go.transform.GetChild(0).gameObject;
+                    //SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
                     //sr.color = animal.Color;
-                    
+
                     //Debug.Log(animal.Color);
                     //Debug.Log(animal.Size);
-                    go.GetComponent<Item_2>().size = (float)animal.size;
+                    //go.GetComponent<Item_2>().size = (float)animal.size;
+                    Debug.Log("ANIMAL DROP: "+animal.size);
 
                     GameObject droppedItem = Instantiate(prefab, dropPosition, Quaternion.identity);
                     droppedItem.GetComponent<Item_2>().color = animal.Color;

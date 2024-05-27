@@ -19,14 +19,14 @@ public class Transporter : MonoBehaviour
         {
             PlayerPrefs.Save();
             //Transform t = transporter.transform;
-            if (SceneManager.GetActiveScene().name == "Laboratorie_new")
+            if (SceneManager.GetActiveScene().name == "Laboratorie")
             {
-                SceneManager.LoadScene("JakeScene_new");
+                SceneManager.LoadScene("JakeScene");
                 //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
             }
             else
             {
-                SceneManager.LoadScene("Laboratorie_new");
+                SceneManager.LoadScene("Laboratorie");
                 //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
             }
         }
