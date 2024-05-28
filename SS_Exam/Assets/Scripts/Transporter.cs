@@ -23,13 +23,13 @@ public class Transporter : MonoBehaviour
         {
             Debug.Log("Transporter detected.");
 
-            if ( lab.alpha == 1 )
+            if ( lab.isActiveAndEnabled )
             {
                 Debug.Log("Deactivating lab, activating island.");
                 SetCanvasGroupActive(lab, false);
                 SetCanvasGroupActive(island, true);
             }
-            else if ( island.alpha == 1 )
+            else if ( island.isActiveAndEnabled )
             {
                 Debug.Log("Deactivating island, activating lab.");
                 SetCanvasGroupActive(island, false);
@@ -41,17 +41,10 @@ public class Transporter : MonoBehaviour
 
     private void SetCanvasGroupActive(CanvasGroup canvasGroup, bool isActive)
     {
-        canvasGroup.alpha = isActive ? 1 : 0;
-        canvasGroup.interactable = isActive;
-        canvasGroup.blocksRaycasts = isActive;
-        Debug.Log(canvasGroup.name + " set to " + ( isActive ? "active" : "inactive" ));
+        
+        canvasGroup.gameObject.SetActive(isActive);
 
-        // Manually set the active state of all child objects
-        foreach ( Transform child in canvasGroup.transform )
-        {
-            child.gameObject.SetActive(isActive);
-            Debug.Log("Child " + child.name + " set to " + ( isActive ? "active" : "inactive" ));
-        }
+
     }
 
 }
