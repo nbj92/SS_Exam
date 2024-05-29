@@ -11,7 +11,7 @@ public class BreedingArea : MonoBehaviour
     // Reference to the AnimalGenetics script
     public AnimalGenetics_2 animalGenetics;
 
-    public GameManager gameManager;
+    private GameManager gameManager;
 
     public Slider breedingBar;
 
@@ -23,6 +23,11 @@ public class BreedingArea : MonoBehaviour
     {
         breedingBar.value = 0;
         breedingBar.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        gameManager = GameManager.instance;
     }
 
     // Method to breed two animals inside the area
@@ -104,16 +109,18 @@ public class BreedingArea : MonoBehaviour
         // Call the BreedAnimals method from the AnimalGenetics script
         GameObject offspring = animalGenetics.BreedAnimals(animalA, animalB);
         Debug.Log("Offspring created: " + offspring.name);
+        Debug.Log("Tag: " + offspring.tag);
 
         // Determine a position outside the trigger area
         Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
-
+        Debug.Log("I AM YOUR GM: " + gameManager);
         //add points to the game manager
-        if (gameManager != null)
+        if (GameManager.instance != null)
         {
             // Add a point based on the animal tag
             if (offspring.CompareTag("Amoebe"))
             {
+                Debug.Log("YOU ARE A AMOEBE");
                 gameManager.AddScore(2);
             }
         }

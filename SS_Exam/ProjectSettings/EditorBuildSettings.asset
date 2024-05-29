@@ -10,15 +10,14 @@ EditorBuildSettings:
     guid: 5eff3bbdcffdcc5468150b78d1414852
   - enabled: 1
     path: Assets/Scenes/Laboratorie.unity
+    guid: 5bdc3d07ec25a344793598c059d5867d
+  - enabled: 0
+    path: Assets/Scenes/Laboratori_1.unity
     guid: bea2d571b9a5e4215b3352f7d34d2ee3
   - enabled: 1
     path: Assets/Scenes/JakeScene.unity
     guid: 5078f2b9914f75243909fe3aaa34f887
   - enabled: 1
-
-    path: Assets/Scenes/MijoSceneOne.unity
-    guid: 77ea043af9f28a245a484185318b6b01
-
     path: Assets/Scenes/JakeScene_new.unity
     guid: 750ead1d0a8e418498afe6f80787c489
   - enabled: 1

@@ -15,7 +15,6 @@ namespace Assets.Scripts
 
         private void Start()
         {
-
             int animalCount = GameManager.instance.GetAnimals().Count;
             Debug.Log("Color: " + color);
             Debug.Log("Animal_size: " + Animal);

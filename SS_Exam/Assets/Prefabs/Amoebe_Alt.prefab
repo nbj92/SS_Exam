@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f592bd0ee5fce0b4da7c8193642a314f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
   size: 2
   sprite: {fileID: 6965899359697959841}
 --- !u!1 &6965899359697959841

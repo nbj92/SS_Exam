@@ -757,6 +757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 280439427}
+  animals: []
+  names: []
   pause: {fileID: 1224036072}
 --- !u!4 &654738463
 Transform:
@@ -2072,6 +2074,10 @@ PrefabInstance:
     - target: {fileID: 1058818679449291887, guid: 1bc2d3d8f42927245a05520a7b7c63c3, type: 3}
       propertyPath: m_Name
       value: CanvasScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058818679449291887, guid: 1bc2d3d8f42927245a05520a7b7c63c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2294688096996848699, guid: 1bc2d3d8f42927245a05520a7b7c63c3, type: 3}
       propertyPath: m_Pivot.x

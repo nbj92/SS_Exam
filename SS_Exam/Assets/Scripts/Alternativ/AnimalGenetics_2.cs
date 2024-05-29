@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class AnimalGenetics_2 : MonoBehaviour
 {
@@ -42,8 +43,12 @@ public class AnimalGenetics_2 : MonoBehaviour
         
         // Instantiate a new offspring object with the selected genes
         GameObject offspring = Instantiate(offspringPrefab, transform.position, Quaternion.identity);
+        offspring.AddComponent<SortingGroup>();
+        //offspring.transform.SetParent(offspring.GetComponent<Item_2>().cg.transform);
+
         offspring.GetComponent<Item_2>().color = color;
         offspring.GetComponent<Item_2>().size = (float)offSpring.size;
+        
 
         Debug.Log(offspring.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color);
         //offspring.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color

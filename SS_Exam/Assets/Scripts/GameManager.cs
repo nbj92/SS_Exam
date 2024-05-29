@@ -68,9 +68,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-// Til pauseskærmen
-  public GameObject pause;
-  private bool isPaused = false;
+
 
 
     public void SetGameState(GameState newState) {
@@ -165,7 +163,7 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
-    private void UpdateUI() {
+    public void UpdateUI() {
 
         if ( scoreText != null )
         {
