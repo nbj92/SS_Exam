@@ -1653,6 +1653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   labGroup: {fileID: 893979748}
   worldGroup: {fileID: 2031386428}
+  activeGroup: {fileID: 893979748}
 --- !u!114 &2124052602
 MonoBehaviour:
   m_ObjectHideFlags: 0

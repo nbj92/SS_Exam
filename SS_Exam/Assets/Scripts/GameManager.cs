@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("UPdate");
+        if (SceneManager.GetActiveScene().name == "Laboratorie" && UIManager.Instance.labGroup == UIManager.Instance.activeGroup)
+            UIManager.Instance.ShowUILayout(UILayouts.Lab);
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)

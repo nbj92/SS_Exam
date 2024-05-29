@@ -26,24 +26,15 @@ public class Transporter : MonoBehaviour
             if ( lab.isActiveAndEnabled )
             {
                 Debug.Log("Deactivating lab, activating island.");
-                SetCanvasGroupActive(lab, false);
-                SetCanvasGroupActive(island, true);
+                UIManager.Instance.ShowUILayout(UILayouts.World);
             }
             else if ( island.isActiveAndEnabled )
             {
                 Debug.Log("Deactivating island, activating lab.");
-                SetCanvasGroupActive(island, false);
-                SetCanvasGroupActive(lab, true);
+                UIManager.Instance.ShowUILayout(UILayouts.Lab);
+
             }
         }
-
-    }
-
-    private void SetCanvasGroupActive(CanvasGroup canvasGroup, bool isActive)
-    {
-        
-        canvasGroup.gameObject.SetActive(isActive);
-
 
     }
 
