@@ -5,13 +5,16 @@ using Thrakal;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField] private CanvasGroup labGroup;
-    [SerializeField] private CanvasGroup worldGroup;
+    [SerializeField] public CanvasGroup labGroup;
+    [SerializeField] public CanvasGroup worldGroup;
 
-    private CanvasGroup activeGroup;
+    public CanvasGroup activeGroup;
+
+   
 
     public void ShowUILayout(UILayouts layout)
     {
+
         CanvasGroup currentLayout = null;
         switch (layout )
         {
@@ -23,18 +26,27 @@ public class UIManager : Singleton<UIManager>
                 break;
         }
 
-        currentLayout.alpha = 1;
-        currentLayout.blocksRaycasts = true;
-        currentLayout.interactable = true;
+        //currentLayout.alpha = 1;
+        //currentLayout.blocksRaycasts = true;
+        //currentLayout.interactable = true;
 
         if( activeGroup != null )
         {
-            activeGroup.alpha = 0;
-            activeGroup.blocksRaycasts = false;
-            activeGroup.interactable = false;
+            //activeGroup.alpha = 0;
+            //activeGroup.blocksRaycasts = false;
+            //activeGroup.interactable = false;
+            if (activeGroup != currentLayout)
+            {
+                activeGroup.gameObject.SetActive(false);
+            }
         }
 
-        activeGroup = currentLayout;
+        
+        if(activeGroup != currentLayout)
+        {
+            currentLayout.gameObject.SetActive(true);
+            activeGroup = currentLayout;
+        }
     }
 }
 

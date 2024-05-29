@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class Transporter : MonoBehaviour
 {
     public GameObject transporter;
+    public CanvasGroup lab;
+    public CanvasGroup island;
+
 
 
     void Update()
@@ -15,19 +18,22 @@ public class Transporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Transporter")
+        Debug.Log("Triggered with: " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("Transporter"))
         {
-            PlayerPrefs.Save();
-            //Transform t = transporter.transform;
-            if (SceneManager.GetActiveScene().name == "Laboratorie")
+            Debug.Log("Transporter detected.");
+
+            if ( lab.isActiveAndEnabled )
             {
-                SceneManager.LoadScene("JakeScene");
-                //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
+                Debug.Log("Deactivating lab, activating island.");
+                UIManager.Instance.ShowUILayout(UILayouts.World);
             }
-            else
+            else if ( island.isActiveAndEnabled )
             {
-                SceneManager.LoadScene("Laboratorie");
-                //gameObject.transform.position = new Vector3(t.position.x, t.position.y, t.position.z);
+                Debug.Log("Deactivating island, activating lab.");
+                UIManager.Instance.ShowUILayout(UILayouts.Lab);
+
             }
         }
 

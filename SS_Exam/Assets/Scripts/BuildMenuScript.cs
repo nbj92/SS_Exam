@@ -11,7 +11,7 @@ public class BuildMenuScript : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.B)) 
+        if (Input.GetKeyDown(KeyCode.B) && UIManager.Instance.activeGroup == UIManager.Instance.labGroup) 
         {
             ToggleBuildMenu(); 
         }

@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
     }
 
 
+    // Til pauseskærmen
+    public GameObject pause;
+    private bool isPaused = false;
+    //
+
     public enum GameState {
         MainMenu,
         Playing,
@@ -67,7 +72,7 @@ public class GameManager : MonoBehaviour
   public GameObject pause;
   private bool isPaused = false;
 
-//
+
     public void SetGameState(GameState newState) {
         currentState = newState;
         OnStateChange(currentState);
@@ -101,6 +106,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("UPdate");
+        if (SceneManager.GetActiveScene().name == "Laboratorie" && UIManager.Instance.labGroup == UIManager.Instance.activeGroup)
+            UIManager.Instance.ShowUILayout(UILayouts.Lab);
+
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)

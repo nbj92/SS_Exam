@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transporter: {fileID: 6333511205617595686, guid: a7cfde66631f52a449448b59a64d2b05, type: 3}
+  lab: {fileID: 0}
+  island: {fileID: 0}
 --- !u!70 &4864604424895553568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
