@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    // Til pauseskærmen
+    public GameObject pause;
+    private bool isPaused = false;
+    //
+
     public enum GameState {
         MainMenu,
         Playing,
@@ -34,11 +39,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-// Til pauseskærmen
-  public GameObject pause; 
-  private bool isPaused = false;
 
-//
     public void SetGameState(GameState newState) {
         currentState = newState;
         OnStateChange(currentState);
