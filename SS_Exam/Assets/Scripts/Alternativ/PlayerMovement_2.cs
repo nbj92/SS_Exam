@@ -32,7 +32,7 @@ namespace Assets.Scripts
         void Start()
         {
 
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponentInChildren<Animator>();
             // Reference the PlayerSprite child GameObject
