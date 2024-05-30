@@ -19,7 +19,7 @@ public class AnimalGenetics_2 : MonoBehaviour
         float size = OffSpringSize((float)parentA.size, (float)parentB.size);
         Color color = OffspringColor(parentA.Color, parentB.Color);
 
-        Debug.Log("breed: " + color);
+        //Debug.Log("breed: " + color);
 
 
         //Debug:Logger()
@@ -61,9 +61,9 @@ public class AnimalGenetics_2 : MonoBehaviour
     Color OffspringColor(Color colorA, Color colorB)
     {
         float rnd = UnityEngine.Random.Range(0f, 1f);
-        Debug.Log(rnd);
+        //Debug.Log(rnd);
         float r = (rnd *Math.Max(colorA.r, colorB.r) + (1f - rnd) * Math.Min(colorA.r, colorB.r));
-        Debug.Log("r: " + r);
+        //Debug.Log("r: " + r);
         rnd = UnityEngine.Random.Range(0f, 1f);
         float g = (rnd * Math.Max(colorA.g, colorB.g) + (1f - rnd) * Math.Min(colorA.g, colorB.g));
 
@@ -71,14 +71,12 @@ public class AnimalGenetics_2 : MonoBehaviour
         float b = (rnd * Math.Max(colorA.b, colorB.b) + (1f - rnd) * Math.Min(colorA.b, colorB.b));
 
         Color colorOffspring = new Color(r, g, b, 1f);
-        Debug.Log(colorOffspring);
+        //Debug.Log(colorOffspring);
 
 
 
 
         return colorOffspring;
-
-        return Color.white;
     }
 
     float OffSpringSize(float sizeA, float sizeB)

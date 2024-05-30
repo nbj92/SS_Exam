@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("UPdate");
+        
         if (SceneManager.GetActiveScene().name == "Laboratorie" && UIManager.Instance.labGroup == UIManager.Instance.activeGroup)
             UIManager.Instance.ShowUILayout(UILayouts.Lab);
 
@@ -142,13 +142,13 @@ public class GameManager : MonoBehaviour
         pause.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        Debug.Log("button test");
+        //Debug.Log("button test");
     }
 
     public void EndGame() {
         SetGameState(GameState.Ended);
         SceneManager.LoadScene(0);
-        Debug.Log("Game Ended");
+        //Debug.Log("Game Ended");
         // Handle end game logic
     }
 

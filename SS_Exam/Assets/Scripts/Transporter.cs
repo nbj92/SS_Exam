@@ -18,7 +18,7 @@ public class Transporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered with: " + collision.gameObject.name);
+        //Debug.Log("Triggered with: " + collision.gameObject.name);
 
         if (collision.gameObject.CompareTag("Transporter"))
         {

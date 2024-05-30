@@ -39,7 +39,7 @@ public class VendorScript : MonoBehaviour {
 
     public void BuyItem(string itemName) {
         
-        Debug.Log("Buying " + itemName);
+        //Debug.Log("Buying " + itemName);
         CloseMenu();
     }
 

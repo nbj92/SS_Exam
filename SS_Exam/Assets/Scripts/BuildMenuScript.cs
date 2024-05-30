@@ -23,7 +23,7 @@ public class BuildMenuScript : MonoBehaviour {
 
     public void BuildItem(string itemName) {
        
-        Debug.Log("Building " + itemName);
+        //Debug.Log("Building " + itemName);
         ToggleBuildMenu(); 
     }
 }

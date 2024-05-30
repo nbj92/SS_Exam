@@ -77,7 +77,7 @@ using System.Collections.Generic;
 
                 printOutput += keys.keyNames[i];
             }
-            Debug.Log(printOutput);
+            //Debug.Log(printOutput);
         }
 
 

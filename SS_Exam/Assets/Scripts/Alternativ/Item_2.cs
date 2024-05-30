@@ -16,8 +16,8 @@ namespace Assets.Scripts
         private void Start()
         {
             int animalCount = GameManager.instance.GetAnimals().Count;
-            Debug.Log("Color: " + color);
-            Debug.Log("Animal_size: " + Animal);
+            //Debug.Log("Color: " + color);
+            //Debug.Log("Animal_size: " + Animal);
             if (Animal == null)
             {
                 if (size == 1f)
@@ -27,7 +27,7 @@ namespace Assets.Scripts
                 else if (size == 2f)
                 {
                     color = new Color(161 / 255.0f, 28 / 255.0f, 34 / 255.0f, 1.0f); //new Color(161f, 28f, 34f, 255f);
-                    Debug.Log("Size 2 color: " + color);
+                    //Debug.Log("Size 2 color: " + color);
                 }
                 
                 Animal = new Animal_2("Amoebe_" + animalCount, size, color);

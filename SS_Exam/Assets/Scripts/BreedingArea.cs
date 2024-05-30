@@ -108,19 +108,19 @@ public class BreedingArea : MonoBehaviour
 
         // Call the BreedAnimals method from the AnimalGenetics script
         GameObject offspring = animalGenetics.BreedAnimals(animalA, animalB);
-        Debug.Log("Offspring created: " + offspring.name);
-        Debug.Log("Tag: " + offspring.tag);
+        //Debug.Log("Offspring created: " + offspring.name);
+        //Debug.Log("Tag: " + offspring.tag);
 
         // Determine a position outside the trigger area
         Vector3 outsideTriggerPosition = GetPositionOutsideTriggerArea();
-        Debug.Log("I AM YOUR GM: " + gameManager);
+        //Debug.Log("I AM YOUR GM: " + gameManager);
         //add points to the game manager
         if (GameManager.instance != null)
         {
             // Add a point based on the animal tag
             if (offspring.CompareTag("Amoebe"))
             {
-                Debug.Log("YOU ARE A AMOEBE");
+                //Debug.Log("YOU ARE A AMOEBE");
                 gameManager.AddScore(2);
             }
         }

@@ -33,7 +33,7 @@ public class DestinationScript : MonoBehaviour {
     public void TeleportToDestination() {
         string selectedDestination = destinationDropdown.options[destinationDropdown.value].text;
         
-        Debug.Log("Teleporting to " + selectedDestination);
+        //Debug.Log("Teleporting to " + selectedDestination);
         CloseMenu();
     }
 
