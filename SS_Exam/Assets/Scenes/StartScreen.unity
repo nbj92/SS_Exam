@@ -1064,9 +1064,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554730532619244955, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
       propertyPath: m_text
-      value: "Avl p\xE5 dyrene og se, hvad der sker\n\nBrug WASD-tasterne til at
-        bev\xE6ge dig rundt i laboratoriet:\nW: Bev\xE6g dig fremad\nA: Bev\xE6g
-        dig til venstre\nS: Bev\xE6g dig bagud\nD: Bev\xE6g dig til h\xF8jre"
+      value: "Avl p\xE5 dyrene og se, hvad der sker.\n\nBrug WASD-tasterne til at
+        bev\xE6ge dig rundt i laboratoriet.\nVenstreklik for at samle op.\nH\xF8jreklik
+        for at placere dyr.\nPlac\xE9r dyrene i den m\xF8rke indhegning for at avle."
       objectReference: {fileID: 0}
     - target: {fileID: 7554730532619244955, guid: b7ed34579d7f0234287b9aa67a403a68, type: 3}
       propertyPath: m_fontSize

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
-  size: 2
+  size: 1
   sprite: {fileID: 6965899359697959841}
 --- !u!1 &6965899359697959841
 GameObject:
