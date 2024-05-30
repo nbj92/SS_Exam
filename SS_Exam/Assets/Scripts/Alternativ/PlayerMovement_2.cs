@@ -37,13 +37,13 @@ namespace Assets.Scripts
             animator = GetComponentInChildren<Animator>();
             // Reference the PlayerSprite child GameObject
             playerSpriteTransform = transform.Find("SpriteRnd");
-            Debug.Log(PlayerPrefs.GetInt("InventoryCount"));
+            //Debug.Log(PlayerPrefs.GetInt("InventoryCount"));
 
             if(PlayerPrefs.HasKey("InventoryCount"))
             {
                 int count = PlayerPrefs.GetInt("InventoryCount");
-                Debug.Log("We have playerPrefs");
-                Debug.Log("Inventory Count: " + count);
+                //Debug.Log("We have playerPrefs");
+                //Debug.Log("Inventory Count: " + count);
                 for(int i=0; i<count; i++)
                 {
                     Animal_2 animal = JsonUtility.FromJson<Animal_2>(PlayerPrefs.GetString("Amoebe_" + i));
@@ -56,7 +56,7 @@ namespace Assets.Scripts
                 Debug.Log("Inventorytory: " + inventory.Count);
             } else
             {
-                Debug.Log("No Prefs");
+                //Debug.Log("No Prefs");
             }
             
         }
