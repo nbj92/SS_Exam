@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Inventory;
-using static UnityEditor.Progress;
 using Assets.Scripts.Alternativ;
 using System;
 using Unity.VisualScripting;
